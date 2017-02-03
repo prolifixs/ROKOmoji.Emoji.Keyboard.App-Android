@@ -15,7 +15,7 @@ Import project in Android studio:
 2. Add a new key to your AndroidManifest.xml file
 name: ROKOMobiAPIToken
 value: API key of your ROKO Mobi portal application (see below for ROKO Mobi portal information)
-(for example " <meta-data android:name="ROKOMobiAPIToken" android:value="Your ROKOMobi API Token key" /> ")
+(for example "<&nbsp;meta-data android:name="ROKOMobiAPIToken" android:value="Your ROKOMobi API Token key" />")
 3. Update release signing config in build.gradle for release application build
 
 ## Portal settings
