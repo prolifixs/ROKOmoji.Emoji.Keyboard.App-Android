@@ -1,0 +1,12 @@
+<resources>
+    <string name="app_name">ROKOmoji</string>
+    <string name="subtype_en_US">English (US)</string>
+    <string name="p1_header">Thanks for downloading\nROKOmoji!</string>
+    <string name="p1_text">Enable ROKOmoji\nin your settings by following\nthese instructions</string>
+    <string name="link_1">About ROKO Stickers</string>
+    <string name="link_2">How to install</string>
+    <string name="link_4">Contact Us</string>
+    <string name="link_5">Privacy Policy</string>
+    <string name="selectROKOmoji">Select ROKOmoji</string>
+    <string name="enableROKOmoji">Enable ROKOmoji</string>
+</resources>

@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    package="com.rokolabs.keyboard">
+
+    <application
+        android:allowBackup="false"
+        tools:replace="android:allowBackup"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:supportsRtl="true"
+        android:theme="@style/Theme.AppCompat.NoActionBar">
+        <meta-data
+            android:name="ROKOMobiAPIToken"
+            android:value="LHkjx7wblhtBpUMg7dWymwC3xRf6DmkLnz7neIdKA/4=" />
+
+        <service
+            android:name=".KeyboardService"
+            android:label="@string/app_name"
+            android:permission="android.permission.BIND_INPUT_METHOD">
+            <meta-data
+                android:name="android.view.im"
+                android:resource="@layout/method" />
+
+            <intent-filter>
+                <action android:name="android.view.InputMethod" />
+            </intent-filter>
+        </service>
+
+        <provider
+            android:name="android.support.v4.content.FileProvider"
+            android:authorities="com.rokolabs.keyboard.inputcontent"
+            android:exported="false"
+            android:grantUriPermissions="true">
+            <meta-data
+                android:name="android.support.FILE_PROVIDER_PATHS"
+                android:resource="@xml/file_paths" />
+        </provider>
+
+        <activity
+            android:name=".RokoMojis"
+            android:label="@string/app_name"
+            android:screenOrientation="portrait">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+    </application>
+
+</manifest>

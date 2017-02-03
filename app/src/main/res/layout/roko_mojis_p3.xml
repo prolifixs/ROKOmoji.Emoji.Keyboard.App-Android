@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/p1"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+
+    <TextView
+        android:id="@+id/doc_link_1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="140dp"
+        android:lineSpacingExtra="4sp"
+        android:onClick="btOpenLink"
+        android:text="@string/link_1"
+        android:textAlignment="center"
+        android:textColor="@color/header_txt"
+        android:textSize="18sp" />
+
+    <TextView
+        android:id="@+id/doc_link_2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="170dp"
+        android:lineSpacingExtra="4sp"
+        android:onClick="btOpenLink"
+        android:text="@string/link_2"
+        android:textAlignment="center"
+        android:textColor="@color/header_txt"
+        android:textSize="18sp" />
+
+    <TextView
+        android:id="@+id/doc_link_4"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="200dp"
+        android:lineSpacingExtra="4sp"
+        android:onClick="btOpenLink"
+        android:text="@string/link_4"
+        android:textAlignment="center"
+        android:textColor="@color/header_txt"
+        android:textSize="18sp" />
+
+    <TextView
+        android:id="@+id/doc_link_5"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="230dp"
+        android:lineSpacingExtra="4sp"
+        android:onClick="btOpenLink"
+        android:text="@string/link_5"
+        android:textAlignment="center"
+        android:textColor="@color/header_txt"
+        android:textSize="18sp" />
+
+
+    <ImageView
+        android:layout_width="96dp"
+        android:layout_height="96dp"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="136dp"
+        android:src="@mipmap/logo" />
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="16dp"
+        android:gravity="center_vertical"
+        android:orientation="horizontal">
+
+        <ImageView
+            android:layout_width="10dp"
+            android:layout_height="10dp"
+            android:layout_marginLeft="2dp"
+            android:layout_marginRight="2dp"
+            android:src="@mipmap/point_m" />
+
+        <ImageView
+            android:layout_width="10dp"
+            android:layout_height="10dp"
+            android:layout_marginLeft="2dp"
+            android:layout_marginRight="2dp"
+            android:src="@mipmap/point_m" />
+
+        <ImageView
+            android:layout_width="14dp"
+            android:layout_height="14dp"
+            android:layout_marginLeft="2dp"
+            android:layout_marginRight="2dp"
+            android:layout_weight="0.08"
+            android:src="@mipmap/point_m" />
+    </LinearLayout>
+
+</RelativeLayout>

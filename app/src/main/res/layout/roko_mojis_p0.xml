@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/p1"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <ImageView
+        android:layout_width="96dp"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+
+        android:layout_marginTop="24dp"
+        android:src="@mipmap/logo" />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="220dp"
+        android:lineSpacingExtra="4sp"
+        android:text="@string/p1_header"
+        android:textAlignment="center"
+        android:textColor="@color/header_txt"
+        android:textSize="24sp"
+        android:textStyle="normal|bold" />
+
+    <TextView
+        android:layout_width="260dp"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="300dp"
+        android:inputType="textMultiLine"
+        android:lineSpacingExtra="8sp"
+        android:text="@string/p1_text"
+        android:textAlignment="center"
+        android:textColor="@color/text_txt"
+        android:textSize="18sp" />
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="16dp"
+        android:gravity="center_vertical"
+        android:orientation="horizontal">
+
+        <ImageView
+            android:layout_width="14dp"
+            android:layout_height="14dp"
+            android:layout_marginLeft="2dp"
+            android:layout_marginRight="2dp"
+            android:layout_weight="0.08"
+            android:src="@mipmap/point_m" />
+
+        <ImageView
+            android:layout_width="10dp"
+            android:layout_height="10dp"
+            android:layout_marginLeft="2dp"
+            android:layout_marginRight="2dp"
+            android:src="@mipmap/point_m" />
+
+        <ImageView
+            android:layout_width="10dp"
+            android:layout_height="10dp"
+            android:layout_marginLeft="2dp"
+            android:layout_marginRight="2dp"
+            android:src="@mipmap/point_m" />
+    </LinearLayout>
+</RelativeLayout>
