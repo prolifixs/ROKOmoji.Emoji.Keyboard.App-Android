@@ -10,9 +10,10 @@
         android:label="@string/app_name"
         android:supportsRtl="true"
         android:theme="@style/Theme.AppCompat.NoActionBar">
+        <!-- API key of your ROKO Mobi portal application -->
         <meta-data
             android:name="ROKOMobiAPIToken"
-            android:value="LHkjx7wblhtBpUMg7dWymwC3xRf6DmkLnz7neIdKA/4=" />
+            android:value="XXXXXXXXXXXXXXXXXXXXXXXX" />
 
         <service
             android:name=".KeyboardService"
