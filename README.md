@@ -47,7 +47,7 @@ https://roko.mobi
 See here for ROKO Mobi documentation, interaction guides, and instructions:
 https://docs.roko.mobi/docs/setting-up-your-account
 
-## Activate your new Keyboard
+## Activate your New Keyboard
 Run application on device or emulator and follow the instructions on the main screen.
 
 ## Reference Links
