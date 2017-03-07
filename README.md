@@ -30,8 +30,19 @@ value: API key of your ROKO Mobi portal application (see below for ROKO Mobi por
 (for example "<&nbsp;meta-data android:name="ROKOMobiAPIToken" android:value="Your ROKOMobi API Token key" />")
 3. Update release signing config in build.gradle for release application build
 
-## Portal settings
-ROKO Mobi provides app developers and product owners with a suite of tools to accelerate mobile development, engage and track customers, and measure their app's success
+## About ROKO Mobi
+ROKO Mobi provides app developers and product owners with a suite of tools to accelerate mobile development, engage and track customers, and measure their app's success. A few things we do:
+
+1. InstaBot (add a chatbot into your app)
+2. Refer-a-Friend
+3. Share
+4. User Analytics
+5. Promo codes
+6. Push notifications
+7. Stickers
+
+Learn more about features at:
+https://roko.mobi
 
 See here for ROKO Mobi documentation, interaction guides, and instructions:
 https://docs.roko.mobi/docs/setting-up-your-account
