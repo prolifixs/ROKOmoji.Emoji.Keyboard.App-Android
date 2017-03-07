@@ -1,12 +1,24 @@
-# ROKOMoji
-Build your own Android custom keyboard
+# ROKOmoji Emoji Keyboard App (Android)
+Create your own Custom Emoji Keyboard App for free with ROKO Labs! We've open sourced our emoji keyboard app you can easily build your own to promote your company and brand!
 
-## About ROKOmoji
-Create your own custom keyboard with ROKO Labs! We've open sourced our emoji keyboard app so you can easily build your own emoji and sticker keyboard app to promote your company and brand.
+The application also utilizes ROKO Mobi Stickers SDK - http://roko.mobi/stickers - which will help you manage your iMessage Sticker App through:
 
-The application is utilizing ROKO Mobi - http://roko.mobi - Stickers SDK to manage your keyboard and see analytics, all for free! 
+1. In-depth sticker analytics and reporting
+2. Upload and send stickers and GIFS straight to your emoji keyboard app w/o submitting another build to Apple 
+3. It's all free! 
 
 Should you have any questions or concerns, feel free to email us at help@rokolabs.com
+
+## Custom Keyboard App Features
+No need to spend time creating features from scratch or paying for a developer. Our open-sourced app includes multiple types of custom app features.
+
+1. Multiple sticker packs supported within one app
+2. User onboarding experience in app
+3. Logo branding
+4. Static and animated stickers
+5. Stickers can be sent in email, messenger, SMS, and more!
+
+Want to see these features in action? Then check out ROKOmoji in the Google Play store.
 
 ## Android Project Settings
 Import project in Android studio:
