@@ -20,6 +20,8 @@ No need to spend time creating features from scratch or paying for a developer. 
 
 Want to see these features in action? Then check out ROKOmoji in the Google Play store.
 
+ROKOmoji - https://play.google.com/store/apps/details?id=com.rokolabs.keyboard&hl=en
+
 ## Android Project Settings
 Import project in Android studio:
 
