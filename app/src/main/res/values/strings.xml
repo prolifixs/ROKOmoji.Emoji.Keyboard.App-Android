@@ -9,4 +9,6 @@
     <string name="link_5">Privacy Policy</string>
     <string name="selectROKOmoji">Select ROKOmoji</string>
     <string name="enableROKOmoji">Enable ROKOmoji</string>
+    <string name="email_mailto">info@rokolabs.com</string>
+    <string name="email_subject">ROKOmoji Android Keyboard</string>
 </resources>

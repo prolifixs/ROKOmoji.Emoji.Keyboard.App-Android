@@ -15,31 +15,8 @@
             android:name="ROKOMobiAPIToken"
             android:value="XXXXXXXXXXXXXXXXXXXXXXXX" />
 
-        <service
-            android:name=".KeyboardService"
-            android:label="@string/app_name"
-            android:permission="android.permission.BIND_INPUT_METHOD">
-            <meta-data
-                android:name="android.view.im"
-                android:resource="@layout/method" />
-
-            <intent-filter>
-                <action android:name="android.view.InputMethod" />
-            </intent-filter>
-        </service>
-
-        <provider
-            android:name="android.support.v4.content.FileProvider"
-            android:authorities="com.rokolabs.keyboard.inputcontent"
-            android:exported="false"
-            android:grantUriPermissions="true">
-            <meta-data
-                android:name="android.support.FILE_PROVIDER_PATHS"
-                android:resource="@xml/file_paths" />
-        </provider>
-
         <activity
-            android:name=".RokoMojis"
+            android:name=".RokoMoji"
             android:label="@string/app_name"
             android:screenOrientation="portrait">
             <intent-filter>

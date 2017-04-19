@@ -4,7 +4,7 @@
     android:id="@+id/roko_mojis_activity"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.rokolabs.keyboard.RokoMojis">
+    tools:context="com.rokolabs.keyboard.RokoMoji">
 
     <ImageView
         android:layout_width="match_parent"

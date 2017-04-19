@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/main_board"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_alignParentBottom="true"
+    android:background="#ffffff"
+    android:orientation="vertical">
+
+    <android.inputmethodservice.KeyboardView xmlns:android="http://schemas.android.com/apk/res/android"
+        android:id="@+id/keyboard_view"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+    <!--top bar-->
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="16dp">
+
+        <TextView
+            android:id="@+id/packNameLabel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center|left"
+            android:text="ROKOmoji"
+            android:textColor="@color/text_txt"
+            android:textSize="15sp" />
+
+        <ImageView
+            android:id="@+id/btShareLinkGP"
+            android:layout_width="22dp"
+            android:layout_height="22dp"
+            android:layout_gravity="center|right"
+            android:src="@mipmap/bt_share" />
+    </FrameLayout>
+
+    <ScrollView
+        android:id="@+id/gif_view"
+        android:layout_width="match_parent"
+        android:layout_height="190dp" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#ffffff"
+        android:gravity="left|center"
+        android:orientation="horizontal"
+        android:padding="6dp">
+
+        <android.support.v7.widget.RecyclerView
+            android:id="@+id/pack_recycler_view"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:layoutManager="android.support.v7.widget.LinearLayoutManager" />
+    </LinearLayout>
+
+</LinearLayout>

@@ -1,8 +1,0 @@
-<ImageView
-    xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="match_parent"
-    android:layout_height="64dp"
-    android:id="@+id/imageItem"
-    android:background="#ffffff"
-    android:padding="2dp"
-    android:src="@mipmap/ic_launcher"/>
