@@ -72,10 +72,10 @@ import java.util.UUID;
 public class KeyboardService extends InputMethodService {
     private static final String TAG = "KeyboardService";
     private final static String SERVICE_NAME = "com.rokolabs.rokomoji.KeyboardService";
-    private static String authority; //"com.rokolabs.rokomoji.rokomoji";
     private static final String MIME_TYPE_GIF = "image/gif";
     public static File imagesDir;
     public static File tempDir;
+    private static String authority; //"com.rokolabs.rokomoji.rokomoji";
     private static String DEEPLINK_TEXT = "Check out the ROKOmoji Keyboard! ";
     public Stickers stickers;
     LinearLayout mainBoard;
@@ -104,6 +104,18 @@ public class KeyboardService extends InputMethodService {
             }
         }
         return false;
+    }
+
+    private static boolean requestPermissionIfNeeded(String permission, Activity activity) {
+        if (ContextCompat.checkSelfPermission(activity, permission) != PackageManager.PERMISSION_GRANTED) {
+            ActivityCompat.requestPermissions(activity, new String[]{permission}, 1);
+            return true;
+        }
+        return false;
+    }
+
+    public static void updateDeepLinkText(String text) {
+        DEEPLINK_TEXT = text;
     }
 
     private void showStickers() {
@@ -160,7 +172,6 @@ public class KeyboardService extends InputMethodService {
         }
     }
 
-
     @Override
     public View onCreateInputView() {
         mainBoard = (LinearLayout) getLayoutInflater().inflate(R.layout.main_board_layout, null);
@@ -194,11 +205,11 @@ public class KeyboardService extends InputMethodService {
         //final Uri contentUri = FileProvider.getUriForFile(this, getAuthority(), stickerData.file);
         final Uri contentUri = FileProvider.getUriForFile(this, authority, stickerData.file);
 
+        final EditorInfo editorInfo = getCurrentInputEditorInfo();
         if (Build.VERSION.SDK_INT >= 25) {
             flag = InputConnectionCompat.INPUT_CONTENT_GRANT_READ_URI_PERMISSION;
         } else {
             flag = 0;
-            final EditorInfo editorInfo = getCurrentInputEditorInfo();
             try {
                 grantUriPermission(editorInfo.packageName, contentUri, Intent.FLAG_GRANT_READ_URI_PERMISSION);
             } catch (Exception e) {
@@ -206,7 +217,7 @@ public class KeyboardService extends InputMethodService {
             }
         }
 
-        if (contentSupportedGif) {
+        if (isCommitContentSupported(editorInfo, stickerData.mime)) {
             String description = "Images";
             InputContentInfoCompat icic;
             if (stickerData.url == null) {
@@ -215,7 +226,13 @@ public class KeyboardService extends InputMethodService {
                 icic = new InputContentInfoCompat(contentUri, new ClipDescription(description, new String[]{stickerData.mime, MIME_TYPE_GIF}), Uri.parse(stickerData.url));
             }
             final InputContentInfoCompat inputContentInfoCompat = icic;
-            InputConnectionCompat.commitContent(getCurrentInputConnection(), getCurrentInputEditorInfo(), inputContentInfoCompat, flag, null);
+            if ("com.facebook.orca".equals(getAppForShare(stickerData).packageName)) {
+                if (!stickerToShare(stickerData)) {
+                    Toast.makeText(this, "Application does not support stickers", Toast.LENGTH_SHORT).show();
+                }
+            } else {
+                InputConnectionCompat.commitContent(getCurrentInputConnection(), getCurrentInputEditorInfo(), inputContentInfoCompat, flag, null);
+            }
             // events
             Event used = new Event("_ROKO.Stickers.Used");
             used.set("photoType", "New");
@@ -232,14 +249,9 @@ public class KeyboardService extends InputMethodService {
             placed.set("stickerPackId", stickerData.packId);
             placed.set("stickerPackName", stickerData.packName);
             placed.set("positionInPack", position + 1);
-
             RokoLogger.addEvents(placed);
-
-        } else {
-            //if (!stickerToShare(stickerData, contentUri)) {
-            if (!stickerToShare(stickerData)) {
-                Toast.makeText(this, "Application does not support stickers", Toast.LENGTH_SHORT).show();
-            }
+        } else if (!stickerToShare(stickerData)) {
+            Toast.makeText(this, "Application does not support stickers", Toast.LENGTH_SHORT).show();
         }
         getStickers();
     }
@@ -266,14 +278,6 @@ public class KeyboardService extends InputMethodService {
             }
         }
         return true;
-    }
-
-    private static boolean requestPermissionIfNeeded(String permission, Activity activity) {
-        if (ContextCompat.checkSelfPermission(activity, permission) != PackageManager.PERMISSION_GRANTED) {
-            ActivityCompat.requestPermissions(activity, new String[]{permission}, 1);
-            return true;
-        }
-        return false;
     }
 
     private ActivityInfo getAppForShare(StickerData stickerData) {
@@ -325,7 +329,6 @@ public class KeyboardService extends InputMethodService {
     }
 
     public void onStartInputView(EditorInfo info, boolean restarting) {
-        contentSupportedGif = isCommitContentSupported(info, MIME_TYPE_GIF);
         startTime = System.currentTimeMillis();
         editorInfo = info;
         RokoLogger.addEvents(new Event("_ROKO.Stickers.Entered"));
@@ -486,7 +489,6 @@ public class KeyboardService extends InputMethodService {
                             dataWriter.write(buffer, 0, numRead);
                         }
                     }
-
                     //-------------- share
                     Intent intent = new Intent(Intent.ACTION_SEND)
                             //.addCategory(Intent.CATEGORY_LAUNCHER)
@@ -521,8 +523,5 @@ public class KeyboardService extends InputMethodService {
             return shared;
         }
     }
-
-    public static void updateDeepLinkText(String text) {
-        DEEPLINK_TEXT = text;
-    }
 }
+
